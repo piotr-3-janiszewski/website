@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chord>
+	<name>E major</name>
+	<symbol>E</symbol>
+	<fingering>
+		<single finger="1" string="G" fret="1"/>
+		<single finger="2" string="A" fret="2"/>
+		<single finger="3" string="D" fret="2"/>
+	</fingering>
+</chord>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chord>
+	<name>D minor 1st barre</name>
+	<symbol>d̅m</symbol>
+	<!-- It's d[u0305]m -->
+	<fingering>
+		<barre finger="1" fret="5" string_low="A" string_high="e">
+		<single finger="2" fret="6" string="H">
+		<single finger="3" fret="7" string="G">
+		<single finger="4" fret="7" string="D">
+		<mute string="E">
+	</fingering>
+</chord>

@@ -1,0 +1,33 @@
+body {
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+table.songs_text {
+	border-spacing: 0;
+}
+
+table.songs_text td {
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+	white-space: pre;
+}
+
+tr.chords td {
+	padding-top: 10px;
+	letter-spacing: 0;
+	font-size: small;
+	font-weight: bold;
+}
+
+@media only screen and (min-width:900px) {
+	tr.lyrics td {
+		letter-spacing: 0.125em;
+	}
+}
+
+br.songs_text {
+	display: block;
+	margin-bottom: 30px;
+}
