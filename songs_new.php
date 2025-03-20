@@ -313,16 +313,22 @@
 		$songs=array_diff(scandir('./songs'), ['.', '..', 'recordings', 'chords']);
 		$desired_song = $_GET['song'];
 		if (in_array($desired_song, $songs)) {
-			echo "<h1>$desired_song</h1>\n";
-			$song=file("./songs/$desired_song");
-			echo "<h2>$song[0]</h2>\n";
-			if (trim($song[1]) != "")
-				echo "<em>$song[1]</em><br>\n";
-			array_shift($song);
-			array_shift($song);
-			foreach ($song as $line) {
-				print_chordpro_line($line);
-			}
+			#echo "<h1>$desired_song</h1>\n";
+			#$song=file("./songs/$desired_song");
+			echo "<div id=\"raw_song\">";
+			$file_contents = file_get_contents("./songs/$desired_song");
+			echo "$file_contents";
+			echo "</div>";
+			echo "<script src=\"render_chordpro.js\"></script>";
+			#echo "<div id=\"raw_song\">$song</div>";
+			#echo "<h2>$song[0]</h2>\n";
+			#if (trim($song[1]) != "")
+			#	echo "<em>$song[1]</em><br>\n";
+			#array_shift($song);
+			#array_shift($song);
+			#foreach ($song as $line) {
+			#	print_chordpro_line($line);
+			#}
 
 			$recordings = preg_grep("/$desired_song(.*)\..[^\.]*/", scandir("./songs/recordings"));
 			echo "<br>";
@@ -338,7 +344,7 @@
 		}
 		else {
 			foreach ($songs as $song)
-				echo "<a href=\"songs.php?song=$song\">$song</a><br>\n";
+				echo "<a href=\"songs_new.php?song=$song\">$song</a><br>\n";
 
 			print_chord("E.xml");
 			print_chord("F.xml");

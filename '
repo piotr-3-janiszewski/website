@@ -1,0 +1,28 @@
+let raw_song_element = document.getElementById("raw_song");
+
+let raw_song_content = raw_song_element.innerHTML;
+let song = raw_song_content.split("\n\n");
+for (let i = 0; i < song.length; i++) {
+	song[i] = song[i].split("\n");
+}
+
+const url = new URLSearchParams(window.location.search);
+const song_title = url.get('song');
+
+let rendered = "";
+rendered += "<div class=\"song\">";
+rendered += "<div class=\"song_head\">";
+rendered += "<div class=\"song_title\">"
+rendered += song_title;
+rendered += "</div>";
+if (song[0].length == 2) {
+	rendered += "<div class=\"song_comment\">";
+	rendered += song[0][1];
+	rendered += "</div>";
+}
+rendered += "</div>";
+rendered += "<div class=\"song_body\">";
+rendered += "</div>";
+rendered += "</div>";
+
+remove(raw_song_element);
